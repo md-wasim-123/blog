@@ -1,0 +1,35 @@
+<nav class="nav-glass flex items-center justify-between">
+  <div class="md:w-24 md:ms-20 ms-4">
+    <img class="md:w-full w-16" src="images/logo.svg" alt="">
+  </div>
+  <div>
+    <ul class="flex items-center justify-center me-2 md:me-14">
+      <a href="/home" class="  mx-2">
+        <li class="md:mx-5 md:font-bold ">Home</li>
+      </a>
+      <a href="/blog" class="  mx-2">
+        <li class="md:mx-5 md:font-bold ">Blog</li>
+      </a>
+      <% if(user) {%>
+        <a href="/post" class=" mx-2">
+          <li class="md:mx-5 md:font-bold ">Create</li>
+        </a>
+        <a href="/logout" class=" mx-2 text-rose-700">
+          <li class="md:mx-5 md:font-bold ">Log Out</li>
+        </a>
+        <a href="#" class="  text-rose-700 rounded-xl">
+          <li class=" rounded-3xl ">
+            <img class="w-12 object-cover" src="https://api.multiavatar.com/<%= user %>.svg" alt="profile">
+          </li> 
+        </a>
+        <% } else { %>
+          <a href="/login" class=" mx-2">
+            <li class="md:mx-5 md:font-bold ">Login</li>
+          </a>
+          <a class=" border-4 p-2 md:border-4 md:p-3 sing mx-2" href="/signup">
+            <li class="md:mx-5 md:font-bold ">Sing up</li>
+          </a>
+          <%}%>
+    </ul>
+  </div>
+</nav>

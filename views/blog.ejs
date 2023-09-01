@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+
+  <!-- ===================navbar==================== -->
+  <%- include('./partials/navbar.ejs') %>
+
+    <div class=" md:w-full md:h-screen md:grid md:grid-cols-2 md:gap-2 bg-slate-800  ">
+      <div class="md:w-full md:h-56 md:translate-y-48 translate-y-5 md:ms-14 p-9 text-center">
+        <p class="pt-2 text-7xl otto">Read Our Blog</p>
+      </div>
+      <div class="md:w-full md:h-full mx-auto mt-8  floating">
+        <img id="img" src="images/college.png" style="width: 80%; margin: 0 auto;" alt="">
+      </div>
+    </div>
+    </div>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h1 class="sm:text-1xl text-2xl font-medium title-font mb-2 text-gray-900">WEEKLY ARTICLES WITH INSIGHT INTO
+              THE WEEKEND'S MESSAGE
+            </h1>
+            <div class="h-1 w-20 bg-gray-900 rounded"></div>
+          </div>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Our blog takes the message from the weekend and lays
+            out next right steps, so you can hear a message and do a message in practical ways</p>
+        </div>
+        <div class="flex flex-wrap items-center justify-evenly ">
+          <% posts.forEach(function(p) { %>
+
+            <div class="xl:w-1/4 md:w-96 p-[1px] box h-80  border-8 mx-2 mt-10 rounded-lg ">
+              <div class=" p-2 h-full rounded-lg  ">
+                <img class="h-40 rounded w-full object-cover object-center mb-2" src="images/post/<%= p.image %>"
+                  alt="content">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font p-2">SUBTITLE</h3>
+                <h2 class="text-lg text-gray-1000 font-medium title-font mb-4 p-2">
+                  <%=p.title.substring(0,19)%>
+                </h2>
+                <form action="/blog<%= p._id %>">
+                  <p class="leading-relaxed text-gray-1000 p-2 ">
+                    <%=p.des.substring(0,20)+"..." %>
+                      <a class="text-indigo-500" href="/dashbord/<%= p._id %>">Read more</a>
+                </form>
+                </p>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+
+      </div>
+    </section>
+
+    <%- include('./partials/footer.ejs') %>

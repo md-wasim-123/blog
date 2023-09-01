@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+    <section class="text-gray-100 body-font post-img">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div class="text-center lg:w-2/3 w-full  ">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 py-20">More then Peopel are not Power ful
+                    </h1>
+                <!-- <p class="mb-8 leading-relaxed sm:hidden">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing
+                    tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami
+                    snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo
+                    booth af fingerstache pitchfork.</p> -->
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-900 h-auto ">
+        <div class="">
+            <div class="flex items-center justify-evenly flex-wrap ">
+                <div class="me-3 ">
+                    <h1 class="text-4xl otto sm:text-center head-p">Create Post Your Blog</h1>
+                </div>
+                <div class="">
+                    <lottie-player src="https://lottie.host/c6121e91-39cd-4f46-8d29-99e4b2b10c62/JIpHAiLjtO.json"
+                        background="bg-transparent" speed="1" style="width: 150px; height: 100px" direction="1"
+                        mode="normal" loop autoplay></lottie-player>
+                </div>
+            </div>
+
+            <div class="container mx-auto box rounded-lg px-2">
+                <form action="/post" method="post" enctype="multipart/form-data">
+                    <div class="flex flex-col p-3">
+                        <label for="email-adress-icon" class="block mb-2 text-2xl font-medium  text-black">Titel</label>
+                        <div class="relative">
+                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            </div>
+                            <input type="text" name="title" id="email-adress-icon"
+                                class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5 pl-10  "
+                                placeholder="Enter titel">
+                        </div>
+                    </div>
+
+                    <div class="p-3">
+                        <label class="block mb-2 text-2xl font-medium text-black" for="large_size">Upload images</label>
+                        <input type="file" class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                          name="image"  id="large_size" >
+                    </div>
+
+                    <div class="p-3">
+                        <label for="message" class=" text-2xl font-medium mb-2 block text-black">Your Message</label>
+                        <textarea id="message" rows="4"
+                            class="bg-transparent border  text-xl  text-gray-900  rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full dark:text-white p-2"
+                          name="des"  placeholder="Description"></textarea>
+                    </div>
+                    <button
+                        class="bg-blue-500 m-5 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                        Button
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
