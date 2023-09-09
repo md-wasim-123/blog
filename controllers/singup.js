@@ -42,7 +42,6 @@ const userSingUpVerification = async (req, res) => {
                 const result = await doc.save()
                 console.log(result);
                 req.session.email = result
-                req.session.email = result.email
                 req.session.fname = result.fname
                 req.session.id =doc._id
 

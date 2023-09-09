@@ -6,7 +6,6 @@ const userpost = new mongoose.Schema({
     des: String,
     fname:String,
     user: String,
-    email:String,
     createdAt: {
         type: Date,
          // Set the default value to the current date and time
