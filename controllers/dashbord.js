@@ -18,7 +18,6 @@ const userdashbord = async (req, res) => {
 const blogPostData = async (req, res) => {
     try {
         const posts = await post.findById({ _id: req.session._id });
-        console.log(posts)
     } catch (error) {
         console.log(error)
     }
