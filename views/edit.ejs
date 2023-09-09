@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="container mx-auto box rounded-lg px-2 h-screen">
+        <form action="/user/update/<%= dat._id %>?_method=PUT" method="POST">
+            <div class="flex flex-col p-3">
+                <label for="email-adress-icon" class="block mb-2 text-2xl font-medium  text-black">Titel</label>
+                <div class="relative">
+                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    </div>
+                    <input type="text" name="title" id="email-adress-icon" value="<%=dat.title%>"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5 pl-10  "
+                        placeholder="Enter titel">
+                </div>
+            </div>
+
+            <div class="p-3">
+                <label class="block mb-2 text-2xl font-medium text-black" for="large_size">Upload images</label>
+                <input type="file"
+                    class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    name="image" id="large_size">
+            </div>
+
+            <div class="p-3">
+                <label for="message" class=" text-2xl font-medium mb-2 block text-black">Your Message</label>
+                <textarea id="message" rows="4"
+                    class="bg-transparent border  text-xl  text-gray-900  rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full dark:text-white p-2"
+                    name="des" placeholder="Description" value="<%= dat.des %>"><%= dat.des %></textarea>
+            </div>
+            <button type="submit"
+                class="text-white bg-slate-900 rounded-xl hover:bg-pink-400 border-4 font-bold w-52 p-2 mx-4 border-b-4 border-blue-700 hover:border-blue-500 ">
+                Button
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

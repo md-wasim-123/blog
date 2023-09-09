@@ -27,7 +27,10 @@ const verificationLoginUser = async (req, res) => {
             if (find != null) {
                 const isMatch = await bcrypt.compare(req.body.password, find.password)
                 if (find.email === email && isMatch) {
+                    console.log(find._id)
+                    req.session.fname = find.fname
                     req.session.email = email
+                    console.log(req.session);
                     return res.redirect("/")
                 } else {
                     req.flash("msg", "Email And Password Are Not Match🔑🔑🔑🔑🔑🔑")

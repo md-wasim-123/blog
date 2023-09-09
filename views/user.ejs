@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+  <%- include('./partials/navbar.ejs') %>
+
+    <div class="container-par flex items-center justify-center flex-col min-h-screen w-full text-center ">
+      <h1 class="text">Mountain Star Zlatibor</h1>
+      <p>Zlatibor is a mountain of exceptional beauty whose special geographical properties have made this mountain a
+        real gem of western Serbia.</p>
+      <a class="bg-slate-900 p-2 text-white rounded-xl hover:bg-pink-400 border-4 mt-9" href="#">Learn more</a>
+    </div>
+
+    <!-- <div class="blank"></div> -->
+
+    <div
+      class="container-par  second  flex items-center justify-center flex-wrap flex-col text-center md:h-[1200px] sm:h-auto sm:mt-3">
+      <% finddata.forEach(function(u) { %>
+        <div class="item-par flex items-center flex-col max-w-[320px]  rounded-3xl box">
+          <div class="img ">
+            <img class="object-cover rounded-xl" src="images/post/<%= u.image %>" alt="">
+          </div>
+          <div class="card ">
+            <div>
+              <h3 class="p-2">
+                <%= u.title %>
+              </h3>
+              <p class="">
+                <%= u.des.substring(0,40)+"..." %>
+              </p>
+            </div>
+            <div class="p-2">
+              <a class="bg-slate-900 p-2 text-white rounded-xl hover:bg-pink-400 border-4 " href="/dashbord/<%= u._id %>">Learn more</a>
+            </div>
+
+            <div class="flex flex-row items-center justify-between p-2 ">
+              <form action="/user/edit/<%= u._id %>" method="get">
+                <div>
+                  <button>
+                    <i class="fa-solid fa-pen-to-square text-xl"></i>
+                  </button>
+                </div>
+              </form>
+              <form action="/user/delete/<%= u._id %>?_method=DELETE" method="post">
+                <div>
+                  <button>
+                    <i class="fa-solid fa-trash text-xl"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <%} ) %>
+    </div>
+
+    <div class=" text-center m-8 p-6  ">
+      <a class="inline bg-slate-900  p-3  text-white rounded-xl hover:bg-pink-400 border-b-4 border-blue-700 hover:border-blue-500 "
+        href="/post">Post</a>
+    </div>
+
+
+    <%- include('./partials/footer.ejs') %>

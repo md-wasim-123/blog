@@ -40,8 +40,14 @@ const userSingUpVerification = async (req, res) => {
                     password: hashPassword  // Store the hashed password, not the plain password
                 })
                 const result = await doc.save()
+                console.log(result);
+                req.session.email = result
                 req.session.email = result.email
-                console.log(req.session);
+                req.session.fname = result.fname
+                req.session.id =doc._id
+
+                // console.log(req.session._id)
+                // console.log(req.session);
                 return res.redirect('/');
             }
         }

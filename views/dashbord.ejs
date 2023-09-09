@@ -4,24 +4,26 @@
 <head>
     <%- include('./partials/header.ejs') %>
 </head>
- 
+
 <body>
 
     <!-- ===================navbar==================== -->
     <%- include('./partials/navbar.ejs') %>
-   
 
-        <div class="p-5 mx-auto sm:p-10 md:p-16 dark:bg-gray-800 dark:text-gray-100">
+
+        <div class="p-5 mx-auto sm:p-10 md:p-16 ">
             <div class="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-                <img src="/images/post/<%=postdata.image %>" alt=""
-                    class=" object-cover sm:h-96 dark:bg-gray-500">
+                <img src="/images/post/<%=postdata.image %>" alt="" class=" object-cover sm:h-96 bg-gray-500">
                 <div
-                    class="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-900">
+                    class="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md text-white bg-gray-900">
                     <div class="space-y-2">
-                        <a rel="noopener noreferrer" href="#"
-                            class="inline-block text-xl  font-semibold sm:text-3xl"><%=postdata.title %></a>
+                        <a rel="noopener noreferrer" href="#" class="inline-block text-xl  font-semibold sm:text-3xl">
+                            <%=postdata.title %>
+                        </a>
                         <p class="text-2xl dark:text-gray-400">By
-                            <a rel="noopener noreferrer" href="#" class="text-xl hover:underline"><%=postdata.des %></a>
+                            <a rel="noopener noreferrer" href="#" class="text-xl hover:underline">
+                                <%=postdata.des %>
+                            </a>
                         </p>
                     </div>
                     <div class="dark:text-gray-100">
@@ -34,20 +36,21 @@
         <article class="w-full px-6 py-24 mx-auto space-y-12 dark:bg-gray-800 dark:text-gray-50">
             <div class="pt-12 border-t dark:border-gray-700">
                 <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-                    <img src="https://source.unsplash.com/75x75/?portrait" alt=""
+                    <img src="https://panda-css.com/panda-bubble-tea.svg" alt=""
                         class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700">
                     <div class="flex flex-col">
-                        <h4 class="text-lg font-semibold"> <%= user.fname %></h4>
+                        <h4 class="text-lg font-semibold">
+                            <%=postdata.fname %>
+                        </h4>
                         <p class="dark:text-gray-400">Sed non nibh iaculis, posuere diam vitae, consectetur neque.
                             Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi
                             luctus ligula euismod lobortis ultricies et nibh.</p>
                     </div>
                 </div>
-                
+
                 <div class="flex justify-center  pt-4 space-x-4 align-center">
-                   
+
                     <a rel="noopener noreferrer" href="#" aria-label="GitHub"
-                    
                         class="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400">
                         <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current">
                             <path
@@ -81,7 +84,7 @@
                     </a>
                 </div>
             </div>
-          
+
             <div class="dark:text-gray-100">
                 <p>Knowledge is the fuel that powers our growth and potential...</p>
             </div>

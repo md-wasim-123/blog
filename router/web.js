@@ -9,6 +9,7 @@ const login = require("../controllers/login.js")
 const post = require("../controllers/postController.js")
 const blog = require("../controllers/blogController.js")
 const dashbord = require("../controllers/dashbord.js")
+const user = require("../controllers/userController.js")
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -35,8 +36,11 @@ router.get("/blog", blog.blogPost) // Route to view blog posts
 router.get("/dashbord/:id", dashbord.userdashbord) // Route to user dashboard
 router.get("/dashbord/:id", dashbord.blogPostData) // Route to user dashboard
 router.get("/logout", login.logoutuser)// Route to log out user
+router.get("/user",user.userpro)
+router.get("/user/edit/:id",user.userDataEdit)
+router.put("/user/update/:id",user.userDataUpdate)
+router.delete("/user/delete/:id",user.userDelete)
 router.get("*", home.page)// Default route to home page
-
 
 
 // Export the router for use in your main app

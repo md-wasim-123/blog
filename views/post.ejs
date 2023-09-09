@@ -7,20 +7,41 @@
 
 <body>
     <section class="text-gray-100 body-font post-img">
-        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-            <div class="text-center lg:w-2/3 w-full  ">
-                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 py-20">More then Peopel are not Power ful
-                    </h1>
-                <!-- <p class="mb-8 leading-relaxed sm:hidden">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing
+        <% if(msg.length>0){ %>
+            <div id="alert-border-2"
+                class="flex items-center p-4 mb-4 text-red-800 border-t-4 border-red-300 bg-red-50 dark:text-red-400 dark:bg-gray-800 dark:border-red-800 "
+                role="alert">
+                <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <div class="ml-3 text-xl font-medium">
+                    <%- msg %>
+                </div>
+                <button type="button"
+                    class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+                    data-dismiss-target="#alert-border-2" aria-label="Close">
+                    <span class="sr-only">Dismiss</span>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+            <% } %>
+                <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+                    <div class="text-center lg:w-2/3 w-full  ">
+                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 py-20">More then
+                            Peopel are not Power ful
+                        </h1>
+                        <!-- <p class="mb-8 leading-relaxed sm:hidden">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing
                     tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami
                     snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo
                     booth af fingerstache pitchfork.</p> -->
-                
-            </div>
-        </div>
+
+                    </div>
+                </div>
     </section>
 
-    <div class="bg-gray-900 h-auto ">
+    <div class="bg-gray-900">
         <div class="">
             <div class="flex items-center justify-evenly flex-wrap ">
                 <div class="me-3 ">
@@ -33,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="container mx-auto box rounded-lg px-2">
+            <div class="container mx-auto box rounded-lg px-2 h-screen">
                 <form action="/post" method="post" enctype="multipart/form-data">
                     <div class="flex flex-col p-3">
                         <label for="email-adress-icon" class="block mb-2 text-2xl font-medium  text-black">Titel</label>
@@ -48,18 +69,19 @@
 
                     <div class="p-3">
                         <label class="block mb-2 text-2xl font-medium text-black" for="large_size">Upload images</label>
-                        <input type="file" class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                          name="image"  id="large_size" >
+                        <input type="file"
+                            class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            name="image" id="large_size">
                     </div>
 
                     <div class="p-3">
                         <label for="message" class=" text-2xl font-medium mb-2 block text-black">Your Message</label>
                         <textarea id="message" rows="4"
                             class="bg-transparent border  text-xl  text-gray-900  rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full dark:text-white p-2"
-                          name="des"  placeholder="Description"></textarea>
+                            name="des" placeholder="Description"></textarea>
                     </div>
                     <button
-                        class="bg-blue-500 m-5 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                        class="  text-white rounded-xl hover:bg-pink-400 border-4 font-bold w-52 p-2 mx-4 border-b-4 border-blue-700 hover:border-blue-500 ">
                         Button
                     </button>
                 </form>
@@ -68,6 +90,7 @@
         </div>
 
     </div>
-</body>
 
-</html>
+
+
+    <%- include('./partials/footer.ejs') %>

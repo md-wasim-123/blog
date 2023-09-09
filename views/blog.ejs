@@ -34,18 +34,21 @@
         <div class="flex flex-wrap items-center justify-evenly ">
           <% posts.forEach(function(p) { %>
 
-            <div class="xl:w-1/4 md:w-96 p-[1px] box h-80  border-8 mx-2 mt-10 rounded-lg ">
+            <div class="xl:w-1/4 md:w-96 p-[1px] box h-[10rem]  border-8 mx-2 mt-10 rounded-lg ">
               <div class=" p-2 h-full rounded-lg  ">
                 <img class="h-40 rounded w-full object-cover object-center mb-2" src="images/post/<%= p.image %>"
                   alt="content">
                 <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font p-2">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-1000 font-medium title-font mb-4 p-2">
+                <h2 class="text-lg text-gray-1000 font-medium title-font  p-2">
                   <%=p.title.substring(0,19)%>
                 </h2>
                 <form action="/blog<%= p._id %>">
-                  <p class="leading-relaxed text-gray-1000 p-2 ">
+                  <p class="leading-relaxed text-gray-1000 p-3 ">
                     <%=p.des.substring(0,20)+"..." %>
                       <a class="text-indigo-500" href="/dashbord/<%= p._id %>">Read more</a>
+                      <div>
+                        <p class="px-1 text-black"><i class="fa-solid fa-user p-2"></i><%=p.fname %></p>  
+                      </div>
                 </form>
                 </p>
               </div>
